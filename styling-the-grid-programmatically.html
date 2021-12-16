@@ -37,6 +37,21 @@
         <div id="s12">12</div>  
     </main>
     <script>
+
+        let count = 1;
+        function move() {
+            setTimeout(() => {
+                if (count > 12) return;
+                toggle(count);
+                count += 1;
+                move();
+            }, 1000);
+        }
+        function toggle(count) {
+            const name = 's' + count;
+            const element = document.getElementById(name);
+            element.classList.toggle('on');
+        }
         
     </script>
 </body>

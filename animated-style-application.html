@@ -125,6 +125,28 @@
         <div id="n100">100</div>
     </main>
     <script>
+        let count = 1;
+        function move() {
+            setTimeout(() => {
+                if (count > 100) return;
+                toggle(count);
+                toggle(count-1);
+                count += 1;
+                move();  
+            }, 500);
+            
+        }
+        function toggle(count) {
+            if (count < 1) return;
+            const name = 'n' + count;
+            const element = document.getElementById(name);
+            element.classList.toggle('on');
+        }
+        // function clean(count) {
+        //     const name = 'n' + count;
+        //     const element = document.getElementById(name);
+        //     element.classList.remove('on'); 
+        // }
 
     </script>
 </body>
